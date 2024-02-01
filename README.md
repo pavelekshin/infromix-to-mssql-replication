@@ -45,7 +45,7 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 > SQL Server 2019 (15.x) introduces full support for the widely used UTF-8 character encoding as an import or export encoding, and as database-level or column-level collation for string data. UTF-8 is allowed in the char and varchar data types, and it's enabled when you create or change an object's collation to a collation that has a UTF8 suffix.\
 > Detailed on [Microsoft](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16#utf8)
 
-# Knowed issues:
+# Known issues:
 1. In source "call" and "vxmlsession" tables enddatetime value is assigned after the call completes
 2. In source "call" and "vxmlsession" tables enddatetime value may not be assigned for some reasons and stay NULL
 3. Source "vxmlelementdetail" table may contains repeated rows
