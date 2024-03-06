@@ -46,9 +46,9 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 > Detailed on [Microsoft](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16#utf8)
 
 # Known issues:
-1. In source DB "call" and "vxmlsession" tables enddatetime value is assigned after the call completes
-2. In source DB "call" and "vxmlsession" tables enddatetime value may not be assigned for some reasons and stay NULL
-3. In source DB "vxmlelementdetail" table may contains repeated rows
+1. In source DB, tables "call" and "vxmlsession" enddatetime column values is assigned after the call completes
+2. In source DB, tables "call" and "vxmlsession" enddatetime column values may not be assigned for some reasons and stay NULL
+3. In source DB, table "vxmlelementdetail" may contains repeated rows
 
 > [!IMPORTANT]
 > 1. Convert "varvalue" column data which may contains non-Latin char from source "vxmlelementdetail" table to NVARCHAR using scalar function dbo.UTF8_TO_NVARCHAR(varvalue) as varvalue
