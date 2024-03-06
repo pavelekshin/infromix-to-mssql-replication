@@ -53,4 +53,4 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 > [!IMPORTANT]
 > 1. Convert "varvalue" column data which may contains non-Latin char from source "vxmlelementdetail" table to NVARCHAR using scalar function dbo.UTF8_TO_NVARCHAR(varvalue)
 > 1. Convert date/datetime from source to according date/datetime in MSSQL 
-> 1. Update enddatetime value for "call" and "vxmlsession" tables because it’s presented in source tables with NULL value for non-end call (you may have a call lasting up to an hour and a half)
+> 1. Periodically trying to update enddatetime value for "call" and "vxmlsession" tables because it’s presented in source tables with NULL value for incompleted calls (we may have a call lasting up to an hour and a half)
