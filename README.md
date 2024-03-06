@@ -4,7 +4,7 @@ Incremetal replication from Cisco CVP Reporting (IBM Infromix) to MSSQL\
 Solution maded for custom reporting based on call labels setted on IVR application, also benefit of this solution is speed up the reports, cause you have the full control of tables/index/statistics and exucution plan and it's optimization.
 
 
-![db_schema](https://github.com/pavelekshin/infromix-to-mssql-replication/assets/55947022/66ee13b1-0e52-4058-bfcb-b2ce60094537)
+![db_schema](https://github.com/pavelekshin/infromix-to-mssql-replication/blob/main/pic/db_schema.png)
 
 Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/cvp12_0/configuration/guide/ccvp_b_reporting-guide-for-cvp-1201/ccvp_b_reporting-guide-for-cvp-1201_chapter_0100.html)
 
