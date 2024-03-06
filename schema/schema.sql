@@ -13,9 +13,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE FUNCTION [dbo].[UTF8_TO_NVARCHAR](@in varchar(MAX))
    RETURNS nvarchar(MAX)
-AS
-BEGIN
-
+as
+begin
    --https://jasontpenny.com/blog/2009/07/31/sql-function-to-get-nvarchar-from-utf-8-stored-in-varchar/
    --https://techcommunity.microsoft.com/t5/sql-server-blog/introducing-utf-8-support-for-sql-server/ba-p/734928
 
@@ -51,7 +50,7 @@ BEGIN
       set @out = @out + NChar(@nc)
    end
    return @out
-END
+end
 GO
 /****** Object:  Table [dbo].[call]    Script Date: 28.01.2024 19:33:31 ******/
 SET ANSI_NULLS ON
@@ -247,14 +246,14 @@ CREATE TABLE [dbo].[vxmlsession](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Index [dbdatetime_call]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [dbdatetime_call] ON [dbo].[call]
+/****** Object:  Index [ix_dbdatetime_call]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_dbdatetime_call] ON [dbo].[call]
 (
 	[dbdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [enddatetime_call]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [enddatetime_call] ON [dbo].[call]
+/****** Object:  Index [ix_enddatetime_call]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_enddatetime_call] ON [dbo].[call]
 (
 	[enddatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
@@ -268,8 +267,8 @@ INCLUDE([enddatetime])
 WHERE ([enddatetime] IS NULL)
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [startdatetime_call]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [startdatetime_call] ON [dbo].[call]
+/****** Object:  Index [ix_startdatetime_call]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_startdatetime_call] ON [dbo].[call]
 (
 	[startdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
@@ -280,64 +279,64 @@ CREATE NONCLUSTERED INDEX [DateTime_tSyncLog] ON [dbo].[tSyncLog]
 	[DateTime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [callstartdate_vxmlcustomcontent]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [callstartdate_vxmlcustomcontent] ON [dbo].[vxmlcustomcontent]
+/****** Object:  Index [ix_callstartdate_vxmlcustomcontent]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_callstartdate_vxmlcustomcontent] ON [dbo].[vxmlcustomcontent]
 (
 	[callstartdate] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [dbdatetime_vxmlcustomcontent]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [dbdatetime_vxmlcustomcontent] ON [dbo].[vxmlcustomcontent]
+/****** Object:  Index [ix_dbdatetime_vxmlcustomcontent]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_dbdatetime_vxmlcustomcontent] ON [dbo].[vxmlcustomcontent]
 (
 	[dbdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [callguid_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [callguid_vxmlelement] ON [dbo].[vxmlelement]
+/****** Object:  Index [ix_callguid_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_callguid_vxmlelement] ON [dbo].[vxmlelement]
 (
 	[callguid] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [dbdatetime_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [dbdatetime_vxmlelement] ON [dbo].[vxmlelement]
+/****** Object:  Index [ix_dbdatetime_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_dbdatetime_vxmlelement] ON [dbo].[vxmlelement]
 (
 	[dbdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [enterdatetime_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [enterdatetime_vxmlelement] ON [dbo].[vxmlelement]
+/****** Object:  Index [ix_enterdatetime_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_enterdatetime_vxmlelement] ON [dbo].[vxmlelement]
 (
 	[enterdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [sessionid_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [sessionid_vxmlelement] ON [dbo].[vxmlelement]
+/****** Object:  Index [ix_sessionid_vxmlelement]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_sessionid_vxmlelement] ON [dbo].[vxmlelement]
 (
 	[sessionid] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [callstartdate_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [callstartdate_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
+/****** Object:  Index [ix_callstartdate_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_callstartdate_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
 (
 	[callstartdate] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [dbdatetime_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [dbdatetime_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
+/****** Object:  Index [ix_dbdatetime_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_dbdatetime_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
 (
 	[dbdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [elementid_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [elementid_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
+/****** Object:  Index [ix_elementid_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_elementid_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
 (
 	[elementid] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [eventdatetime_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [eventdatetime_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
+/****** Object:  Index [ix_eventdatetime_vxmlelementdetail]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_eventdatetime_vxmlelementdetail] ON [dbo].[vxmlelementdetail]
 (
 	[eventdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
@@ -353,22 +352,22 @@ INCLUDE([elementid],[varvalue],[callstartdate]) WITH (PAD_INDEX = OFF, STATISTIC
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [appname_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [appname_vxmlsession] ON [dbo].[vxmlsession]
+/****** Object:  Index [ix_appname_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_appname_vxmlsession] ON [dbo].[vxmlsession]
 (
 	[appname] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [callguid_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [callguid_vxmlsession] ON [dbo].[vxmlsession]
+/****** Object:  Index [ix_callguid_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_callguid_vxmlsession] ON [dbo].[vxmlsession]
 (
 	[callguid] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [dbdatetime_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [dbdatetime_vxmlsession] ON [dbo].[vxmlsession]
+/****** Object:  Index [ix_dbdatetime_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_dbdatetime_vxmlsession] ON [dbo].[vxmlsession]
 (
 	[dbdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
@@ -382,8 +381,8 @@ INCLUDE([enddatetime])
 WHERE ([enddatetime] IS NULL)
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
 GO
-/****** Object:  Index [startdatetime_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
-CREATE NONCLUSTERED INDEX [startdatetime_vxmlsession] ON [dbo].[vxmlsession]
+/****** Object:  Index [ix_startdatetime_vxmlsession]    Script Date: 28.01.2024 19:33:31 ******/
+CREATE NONCLUSTERED INDEX [ix_startdatetime_vxmlsession] ON [dbo].[vxmlsession]
 (
 	[startdatetime] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
@@ -472,7 +471,6 @@ set nocount on
 
 		end			
 	end
-
 GO
 /****** Object:  StoredProcedure [dbo].[sCleanupReportTables]    Script Date: 28.01.2024 19:33:31 ******/
 SET ANSI_NULLS ON
@@ -676,7 +674,6 @@ set nocount on
 
 		end			
 	end
-
 GO
 /****** Object:  StoredProcedure [dbo].[sOnReglamentIndex]    Script Date: 28.01.2024 19:33:31 ******/
 SET ANSI_NULLS ON
@@ -778,8 +775,7 @@ BEGIN
 		and ISNULL(stats_date(s.[object_id], s.stats_id), getdate()) < @DateNow
 
 	exec sys.sp_executesql @Script
-
-END
+end
 GO
 /****** Object:  StoredProcedure [dbo].[sQueryGetColumns]    Script Date: 28.01.2024 19:33:31 ******/
 SET ANSI_NULLS ON
@@ -915,7 +911,6 @@ begin
 			set @QueryParameters = left(@QueryParameters, len(@QueryParameters)-3)
 	end
 end
-
 GO
 /****** Object:  StoredProcedure [dbo].[sSettingsTableUpdate]    Script Date: 28.01.2024 19:33:31 ******/
 SET ANSI_NULLS ON
@@ -1121,7 +1116,7 @@ set nocount on
 		tSyncLog ([DateTime], [OperationName], [TargetTableName], [RowsProcessed], [State], [Error], [Query])
 	values
 		(getdate(), 'IncrementalSync', convert(varchar(256), @TargetTableName), @RowsProcessed, @StateExecute, @ErrorExecute, @OPENQUERY)
-END
+end
 GO
 /****** Object:  StoredProcedure [dbo].[sSyncTablesUpdate]    Script Date: 28.01.2024 19:33:31 ******/
 SET ANSI_NULLS ON
@@ -1265,5 +1260,5 @@ set nocount on
 		tSyncLog ([DateTime], [OperationName], [TargetTableName], [RowsProcessed], [State], [Error], [Query])
 	values
 		(getdate(), 'Update', convert(varchar(256), @TargetTableName), @RowsProcessed, @StateExecute, @ErrorExecute, @OPENQUERY)
-END
+end
 GO
