@@ -1,7 +1,7 @@
 # infromix-to-mssql-replication\
 
 Incremetal replication from Cisco CVP Reporting (IBM Infromix) to MSSQL\
-Solution maded for custom reporting based on call labels setted on IVR application, also benefit of this solution is speed up the reports, cause you have the full control of tables/index/statistics/exucution plan and it's optimization.
+Solution made for acceleration of custom reports and reducing workload on CVP Reporting instance, benefit of this solution is speed up the reports, cause you gain the full control of tables/indexs/statistics/exucution plan and it's optimization.
 
 
 ![db_schema](https://github.com/pavelekshin/infromix-to-mssql-replication/blob/main/pic/db_schema.png)
@@ -51,6 +51,6 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 3. In source DB, in the "vxmlelementdetail" table may contains repeated rows
 
 > [!IMPORTANT]
-> 1. Convert "varvalue" column data which may contains non-Latin char from source "vxmlelementdetail" table to NVARCHAR using scalar function dbo.UTF8_TO_NVARCHAR(varvalue) as varvalue
+> 1. Convert "varvalue" column data which may contains non-Latin char from source "vxmlelementdetail" table to NVARCHAR using scalar function dbo.UTF8_TO_NVARCHAR(varvalue)
 > 1. Convert date/datetime from source to according date/datetime in MSSQL 
 > 1. Update enddatetime value for "call" and "vxmlsession" tables because it’s presented in source tables with NULL value for non-end call (you may have a call lasting up to an hour and a half)
