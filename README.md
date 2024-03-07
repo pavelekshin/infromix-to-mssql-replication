@@ -6,7 +6,15 @@ Solution made for acceleration of custom reports and reducing workload on CVP Re
 
 ![db_schema](https://github.com/pavelekshin/infromix-to-mssql-replication/blob/main/pic/db_schema.png)
 
-Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/cvp12_0/configuration/guide/ccvp_b_reporting-guide-for-cvp-1201/ccvp_b_reporting-guide-for-cvp-1201_chapter_0100.html)
+Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/cvp12_0/configuration/guide/ccvp_b_reporting-guide-for-cvp-1201/ccvp_b_reporting-guide-for-cvp-1201_chapter_0100.html) <br>
+<br>
+
+
+# Prerequisite:
+1. Depending on which Windows operating system version (32-bit or 64-bit) is used, install according IBM Informix Client SDK for Windows Operating Systems, which contains ODBC driver for IBM Informix
+1. Configure ODBC driver on Windows used ODBC Data Sources Administrator (32-bit or 64-bit)
+1. Configure Linked server on MSSQL to use previously configured ODBC connection - f.e check linked_server.sql
+
 
 # Sync tables:
 1. call
