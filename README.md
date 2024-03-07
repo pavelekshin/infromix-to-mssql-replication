@@ -17,7 +17,7 @@ Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en
 1. Configure Linked server on MSSQL to use previously configured ODBC connection - f.e check data/linked_server.sql
 
 * _On my deployment I used - clientsdk.4.10.FC14.windows64.zip_
-*_For more information about connecting to CVP Reporting instance, check Cisco [documentation](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/cvp12_0/configuration/guide/ccvp_b_reporting-guide-for-cvp-1201/ccvp_b_reporting-guide-for-cvp-1201_chapter_010.html#task_98BAFAACB233B9D2CF42DAACE1C8DF84)_
+* _For more information about connecting to CVP Reporting instance, check Cisco [documentation](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/cvp12_0/configuration/guide/ccvp_b_reporting-guide-for-cvp-1201/ccvp_b_reporting-guide-for-cvp-1201_chapter_010.html#task_98BAFAACB233B9D2CF42DAACE1C8DF84)_
 
 # Sync tables:
 1. call
