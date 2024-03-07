@@ -75,4 +75,4 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 > 1. Periodically trying to update enddatetime value for "call" and "vxmlsession" tables because it’s presented in source tables with NULL value for uncompleted calls (we may have a call lasting up to an hour)
 
 > [!TIP]
-> Tune the number of copied records on tSetting and frequency running job - job_runSyncReportTable according your workload and you tasks.
+> Tune the number of copied records on tSetting and frequency running job - job_runSyncReportTable according your workload and your tasks.
