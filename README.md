@@ -14,7 +14,7 @@ Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en
 # Prerequisite:
 1. Depending on which Windows operating system version (32-bit or 64-bit) is used, install according IBM Informix Client SDK for Windows Operating Systems, which contains ODBC driver for IBM Informix
 1. Configure ODBC driver on Windows used ODBC Data Sources Administrator (32-bit or 64-bit)
-1. Configure Linked server on MSSQL to use previously configured ODBC connection - f.e check linked_server.sql
+1. Configure Linked server on MSSQL to use previously configured ODBC connection - f.e check data/linked_server.sql
 
 * _On my deployment I used - clientsdk.4.10.FC14.windows64.zip_
 
