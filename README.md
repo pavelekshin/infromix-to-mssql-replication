@@ -15,6 +15,7 @@ Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en
 1. Configure ODBC driver on Windows used ODBC Data Sources Administrator (32-bit or 64-bit)
 1. Configure Linked server on MSSQL to use previously configured ODBC connection - f.e check linked_server.sql
 
+* _On my deployment I used - clientsdk.4.10.FC14.windows64.zip_
 
 # Sync tables:
 1. call
