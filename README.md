@@ -48,6 +48,15 @@ Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en
 1. sSyncTablesIncremental - procedure for incremental copy with OPENQUERY
 1. sSyncTablesUpdate - procedure for update tables with OPENQUERY
 
+# Jobs:
+1. job_runSyncReportTable - run increment copy and update procedure
+1. job_runOnReglamentIndex - run reglament procedure and disabled/enabled incremental copy job while the run
+1. job_cleanupTasks - run cleanup procedure
+1. job_maintenanceplan_db - run maintenanceplan plan for backup database
+1. job_maintenanceplan_log - run maintenanceplan plan for backup transaction log (if you plan to use DB recovery mode: FULL)
+
+* _Configure database maintenance plan according your best practice_
+
 # DB function:
 UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 
@@ -64,3 +73,6 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 > 1. Convert "varvalue" column data which may contains non-Latin char from source "vxmlelementdetail" table to NVARCHAR using scalar function dbo.UTF8_TO_NVARCHAR(varvalue)
 > 1. Convert date/datetime from source to according date/datetime in MSSQL 
 > 1. Periodically trying to update enddatetime value for "call" and "vxmlsession" tables because it’s presented in source tables with NULL value for uncompleted calls (we may have a call lasting up to an hour)
+
+> [!TIP]
+> Tune the number of copied records on tSetting and frequency running job - job_runSyncReportTable according your workload and you tasks.
