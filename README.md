@@ -37,7 +37,7 @@ Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en
 1. vxmlcustomcontent
 1. tIndexStateHistory - logs table for index reglament procedure
 1. tSetting - global settings, RowCopyPerTime, Cleanup_Age, LinkedServer name, etc
-1. tSettingsTables - settings for copyed and updated tables, sSyncReportTables used this table
+1. tSettingsTables - settings for copy and update tables, sSyncReportTables used this table
 1. tSyncLog - stored infromation about each run of copy/update/cleanup procedure
 
 # DB procedure:
