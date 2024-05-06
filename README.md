@@ -5,6 +5,9 @@ Solution made for acceleration of custom reports and reducing workload on CVP Re
 <br>
 <br>
 
+One of the main advantages of OPENQUERY is remote execution, meaning that the query is sent from the local server to remote server while having knowledge of those remote tables that are now local to the query. By the way, remote execution also enables the use of native syntax of the remote server, so you can take advantage of other RDBMS system’s performance tricks. But, the main reason why OPENQUERY will use - it's perform better is the knowledge of the table in terms of indexes and stats, knowledge that a direct linked server doesn’t have. 
+
+
 ![db_schema](https://github.com/pavelekshin/infromix-to-mssql-replication/blob/main/pic/db_schema.png)
 
 Source DB schema and table description on [Cisco.com](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/customer_voice_portal/cvp12_0/configuration/guide/ccvp_b_reporting-guide-for-cvp-1201/ccvp_b_reporting-guide-for-cvp-1201_chapter_0100.html) <br>
