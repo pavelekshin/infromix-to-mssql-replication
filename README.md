@@ -1,4 +1,4 @@
-# infromix-to-mssql-replication\
+# infromix-to-mssql-replication
 
 Incremetal replication from Cisco CVP Reporting (IBM Infromix) to MSSQL\
 Solution made for acceleration of custom reports and reducing workload on CVP Reporting instance, benefit of this
