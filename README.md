@@ -85,9 +85,7 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 > encoding, and as database-level or column-level collation for string data. UTF-8 is allowed in the char and varchar
 > data
 > types, and it's enabled when you create or change an object's collation to a collation that has a UTF8 suffix.\
-> Detailed
->
-on [Microsoft](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16#utf8)
+> Detailed on [Microsoft](https://learn.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver16#utf8)
 
 ### Known issues:
 
