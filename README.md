@@ -2,7 +2,7 @@
 
 Incremetal replication from Cisco CVP Reporting (IBM Infromix) to MSSQL\
 Solution made for acceleration of custom reports and reducing workload on CVP Reporting instance, benefit of this
-solution is speed up the reports, cause you gain the full control of tables/indexes/statistics/exucution plan and it's
+solution is speed up the reports, cause you gain the full control of tables/indexes/statistics/execution plan, and it's
 optimization.
 <br>
 <br>
@@ -90,9 +90,9 @@ UTF8_TO_NVARCHAR - helper scalar function which convert Unicode to NVARCHAR.
 ### Known issues:
 
 1. In source DB, in the "call" and "vxmlsession" tables, enddatetime column is filled after the call is completed
-2. In source DB, in the "call" and "vxmlsession" tables, enddatetime column may not be filled for some reasons and stay
+2. In source DB, in the "call" and "vxmlsession" tables, enddatetime column may not be filled for some reason and stay
    NULL
-3. In source DB, in the "vxmlelementdetail" table may contains repeated rows
+3. In source DB, in the "vxmlelementdetail" table may contain repeated rows
 
 > [!IMPORTANT]
 > 1. Convert "varvalue" column data which may contains non-Latin char from source "vxmlelementdetail" table to NVARCHAR
